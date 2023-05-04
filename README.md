@@ -2,7 +2,7 @@
 
 ## Présentation du projet
 
-* Pour ce projet nous avons décider de mettre en place à l'aide d'une image un éditeur de texte afin d'obtenir vscode dans un navigateur.
+* Pour ce projet nous avons décider de mettre en place un éditeur de texte afin d'obtenir vscode dans un navigateur.
 
 ## Prérequis pour lancer le container 
 
@@ -13,7 +13,9 @@
 
 * Cloner le repository git à l'aide de la commande suivante : <b>git clone git@github.com:IKLSI/docker-sae-203-equipe12-vscode</b>
 * Se placer dans le dossier docker-sae-203-equipe12-vscode
-* Lancer la commande suivante : <b>docker-compose up -d</b>
+* Lancer la commande suivante : <b>docker build -t nom_du_container -f DockerFile chemin/absolu</b>
+* Puis a commande suivante : <b>docker run -p 8443:8443 -v $(pwd)/src_docker:/home/Docker nom_du_container</b> sous Linux
+* Sous Windows : <b>docker run -p 8443:8443 -v chemin/absolu/src_docker:/home/Docker nom_du_container</b>
 * Enfin, ouvrir un navigateur et taper l'adresse suivante : <b>localhost:8443</b>
 
 ## Autres projets 

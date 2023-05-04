@@ -1,0 +1,19 @@
+FROM debian:latest
+
+# Installe les dépendances de Code-Server
+RUN apt-get update && \
+    apt-get install -y curl && \
+    curl -fsSL https://code-server.dev/install.sh | sh
+
+# Configure les variables d'environnement
+ENV TZ=Etc/UTC \
+    PUID=1000 \
+    PGID=1000
+
+# Port
+EXPOSE 8443
+
+ENTRYPOINT ["/usr/bin/code-server", "--bind-addr", "0.0.0.0:8443", "--auth", "none", "/home/Docker/"]
+
+# Répértoire pour le container
+WORKDIR /home/Docker
